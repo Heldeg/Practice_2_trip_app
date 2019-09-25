@@ -11,4 +11,5 @@ class Trip {
         description blank: true
         value min: 1
     }
+    
 }
