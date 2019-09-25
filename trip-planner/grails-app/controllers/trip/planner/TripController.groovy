@@ -1,5 +1,6 @@
 package trip.planner
 
+import grails.artefact.DomainClass
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
@@ -7,7 +8,9 @@ class TripController {
 
     TripService tripService
 
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static scaffold = DomainClass
+
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE", show: ""]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
